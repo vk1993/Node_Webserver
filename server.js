@@ -3,7 +3,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 var app = express();
-var port = process.env.PORT || 7878;
+var port = process.env.PORT ||7878;
 
 app.set('view engine','hbs');
 
@@ -22,10 +22,10 @@ console.log(log);
     next();
 })
 
-app.use((req,res,next)=>{
-    res.render("maintenance.hbs");
+// app.use((req,res,next)=>{
+//     res.render("maintenance.hbs"); 
 
-})
+// })
 app.use(express.static(__dirname + "/public"));
 var user = "Visal Kumar rao";
 
@@ -60,6 +60,12 @@ app.get("/software",(req,res)=>{
     res.render('software.hbs',{
         title:"software",
         files:['IDM','Linux Ubntu87.8','Diujy.ljdj']
+    })
+})
+
+app.get("/project",(req,res) =>{
+    res.render('project.hbs',{
+        title: "project"
     })
 })
 
