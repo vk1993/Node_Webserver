@@ -3,6 +3,8 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 var app = express();
+var port = process.env.PORT || 7878;
+
 app.set('view engine','hbs');
 
 hbs.registerPartials(__dirname +'/views/partials');
@@ -64,6 +66,6 @@ app.get("/software",(req,res)=>{
 function consolerer(data) {
     console.log(data);
 }
-app.listen(7878,() =>{
-    console.log("dgdhdh");
+app.listen(port,() =>{
+    console.log(`port is running on ${port}`);
 });
